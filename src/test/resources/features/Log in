@@ -1,0 +1,25 @@
+Feature: Log in
+
+  Scenario: Registered user should be able to log in
+    Given that user clicks on Ulogujte se button
+    And fills all mandatory fields with valid data
+    And clicks on Ulogujte se blue button
+    Then izlogujte se button is shown in header section
+
+
+    Scenario: User should not be able to log in with invalid email
+
+      Given that user clicks on izlogujte se button
+      And user fills email text box field with invalid email adress
+      And user fills lozinka field with valid password
+      And clicks on Ulogujte se blue button
+      Then red validation error message is shown
+
+      Scenario: User should not be able to log in with invalid password
+
+        Given that user again clicks on Ulogujte se button
+        And user fills email text box field with valid mail adress
+        And user clears lozinka field
+        And user fills lozinka text box field with invalid password
+        And clicks on Ulogujte se blue button
+        Then lozinka validation error message is shown

@@ -1,0 +1,45 @@
+Feature: Product detail page
+
+  Scenario: Loged in user should be able to send message to seller
+
+    Given that user enters in a search filed valid data
+    And user clicks on trazi button
+    And clicks on second valid article
+    Then user clicks on posaljite poruku on pdp page
+    And enters valid credentials on ulogujte se page
+    And clicks on Ulogujte se blue button
+    Then proper text is shown
+
+  Scenario: Wish list
+
+    Given that user enters in a search filed new valid data
+    And user clicks on trazi button
+    And clicks on second valid article
+    And cliks on prati Prati option
+    And clicks on Pratim option on left menu side
+    Then cena section is shown
+
+    Scenario Outline: The user cannot rate the seller with whom he has not communicated
+
+      Given that user seacrhes for <phones>
+      And user clicks on trazi button
+      And clicks on second valid article
+      And clicks on ocenite
+      And clicks on ocenite blue button
+      Then proper text korisnika ne mozete oceniti is shown
+
+      Examples:
+        | phones     |
+        | Huawei P40 |
+        | Iphone SE |
+        | Honor 20   |
+
+
+
+
+
+
+
+
+
+

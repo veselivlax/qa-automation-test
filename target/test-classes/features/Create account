@@ -1,0 +1,32 @@
+Feature: Create account
+
+  Scenario: Unregistered user should be able to create an account
+
+    Given that user clicks on Ulogujte se button
+    And user clicks on Registrujte se link
+    And user fills all mandatory fields
+    And user checks two checks boxes
+    When user clicks on nastavi button
+    Then proper validation message is shown
+
+    Scenario: Unregistered user should not be able to start the create account flow with invalid email address
+
+      Given that user hover and clicks on Ulogujte se button
+      And user clicks on Registrujte se link
+      And user fills email field with invalid email adress
+      And user fills lozinka fields with valid data
+      And user checks two checks boxes
+      When user clicks on nastavi button
+      Then proper message is shown
+
+      Scenario: Required fields should trigger validation if left empty on the Your Personal Information page
+
+        Given that user hover and clicks on Ulogujte se button
+        And user clicks on Registrujte se link
+        And user fills email field with valid email adress
+        And user fills lozinka field with valid data
+        And user checks two checks boxes
+        When user clicks on nastavi button
+        Then alert message is shown
+
+

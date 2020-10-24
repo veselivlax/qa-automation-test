@@ -1,0 +1,26 @@
+Feature: Search
+
+  Scenario: Searching for an invalid term should field no results
+
+    Given that user types non-existent item in search field
+    When user clicks on trazi button
+    Then proper result should be shown
+
+    Scenario: Performing a blank search should field a validation message
+
+      Given that user clicks on trazi button
+      Then certain message is shown
+
+
+
+  Scenario Outline: Searching for valid data should give something
+
+    Given that user searches for <mobilePhone>
+    When user clicks on trazi button
+    Then proper text should be displayed
+    Examples:
+      | mobilePhone |
+      |Iphone 8     |
+      |Iphone 11    |
+
+
