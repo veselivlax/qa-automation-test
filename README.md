@@ -1,4 +1,4 @@
-#Automation features written in Selenium Java
+# Automation features written in Selenium Java
 
 This project is designed to test certain features on Webpage KupujemProdajem.<br/>
 Test has written in Selenium Java using Cucumber.<br/>
